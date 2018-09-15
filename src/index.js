@@ -1,19 +1,17 @@
-import _ from 'lodash';
-import './style.scss';
+import _ from "lodash";
+import "./style.scss";
 // import iWantU from './i_want_you.png';
-import Data from './data.xml';
-import printMe from './print.js';
+// import Data from './data.xml';
+import { cube, square } from "./math.js";
+import printMe from "./print.js";
 
 function component() {
-    let element = document.createElement('div');
-    var btn = document.createElement('button');
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello')
-    element.appendChild(btn);
-    console.dir(Data)
-    return element;
+  let element = document.createElement("pre");
+  element.innerHTML = ["Hello webpack!", "5 cubed is equal to " + cube(5)].join(
+    "\n\n"
+  );
+  cube(81)
+  return element;
 }
-
+console.log("33333");
 document.body.appendChild(component());
